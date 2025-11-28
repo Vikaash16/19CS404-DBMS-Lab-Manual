@@ -42,7 +42,7 @@ HAVING condition;
 -- How many appointments are scheduled for each patient?
 
 ```sql
--- SELECT PatientID , count(AppointmentID) as TotalAppointments
+SELECT PatientID , count(AppointmentID) as TotalAppointments
 FROM Appointments 
 group by PatientID
 ORDER BY PatientID
@@ -57,7 +57,7 @@ ORDER BY PatientID
 -- What is the average duration of insurance coverage for patients covered by each insurance company? 
 
 ```sql
--- SELECT InsuranceCompany, AVG(enddate - startdate) AS AvgCoverageDurationDays
+SELECT InsuranceCompany, AVG(enddate - startdate) AS AvgCoverageDurationDays
 FROM Insurance
 GROUP BY InsuranceCompany;
 ```
@@ -71,7 +71,7 @@ GROUP BY InsuranceCompany;
 -- How many prescriptions were written in each frequency category (e.g., once daily, twice daily)? 
 
 ```sql
--- select Frequency, count(PatientID) as TotalPrescriptions
+SELECT Frequency, count(PatientID) as TotalPrescriptions
 FROM Prescriptions
 group by Frequency;
 ```
@@ -85,7 +85,7 @@ group by Frequency;
 -- Write a SQL query to find the average salary of all employees?
 
 ```sql
--- SELECT AVG(income) AS Average_Salary 
+SELECT AVG(income) AS Average_Salary 
 FROM employee;
 ```
 
@@ -98,7 +98,7 @@ FROM employee;
 -- Write a SQL query that counts the number of unique salespeople. Return number of salespeople.
 
 ```sql
--- SELECT count(distinct salesman_id) AS COUNT
+SELECT count(distinct salesman_id) AS COUNT
 FROM orders;
 ```
 
@@ -111,7 +111,7 @@ FROM orders;
 -- Write a SQL query to return the total number of rows in the 'customer' table where the city is not Noida.
 
 ```sql
--- SELECT COUNT(id) AS COUNT FROM customer 
+SELECT COUNT(id) AS COUNT FROM customer 
 WHERE city != 'Noida';
 ```
 
@@ -124,7 +124,7 @@ WHERE city != 'Noida';
 -- Write a SQL query to find What is the age difference between the youngest and oldest employee in the company.
 
 ```sql
--- SELECT MAX(age) - MIN(age) AS age_difference 
+SELECT MAX(age) - MIN(age) AS age_difference 
 FROM employee;
 ```
 
@@ -137,7 +137,7 @@ FROM employee;
 --Write the SQL query that accomplishes the grouping of data by joining date (jdate), calculates the minimum work hours for each date, and excludes dates where the minimum work hour is not less than 10.
 
 ```sql
--- SELECT jdate, MIN(workhour) 
+SELECT jdate, MIN(workhour) 
 FROM employee1 
 GROUP BY jdate 
 HAVING MIN(workhour) < 10;
@@ -152,7 +152,7 @@ HAVING MIN(workhour) < 10;
 -- Write the SQL query that accomplishes the grouping of data by joining date (jdate), calculates the total work hours for each date, and excludes dates where the total work hour sum is not greater than 40.
 
 ```sql
--- SELECT jdate, SUM(workhour)
+SELECT jdate, SUM(workhour)
 FROM employee1 
 GROUP BY jdate
 HAVING SUM(workhour) >= 40;
@@ -167,7 +167,7 @@ HAVING SUM(workhour) >= 40;
 -- Write the SQL query that achieves the grouping of data by age, calculates the minimum income for each age group, and includes only those age groups where the minimum income is less than 400,000.
 
 ```sql
--- SELECT age, MIN(income) 
+SELECT age, MIN(income) 
 FROM employee 
 GROUP BY age
 HAVING MIN(income) < 400000;
